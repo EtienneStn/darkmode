@@ -1,5 +1,5 @@
 // DARKMODE
-var checkbox = document.querySelector('input[name=theme]');
+let checkbox = document.querySelector('input[name=theme]');
 
 checkbox.addEventListener('change', function() {
     if(this.checked) {
@@ -60,3 +60,20 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(txt.length) setTimeout(type, newTextDelay + 250);
 });
+//////////////////////////////////////////////////////////////////////////////////
+// TOAST NOTIF
+const toastButton = document.querySelector('.toast-notif-btn')
+
+console.log(toastButton)
+toastButton.addEventListener('click', () => {
+  const divToaster = document.querySelector(".toaster")
+  const divCreate = document.createElement('div')
+  const timeout1 = 1000
+  divCreate.classList.add("test")
+  divCreate.innerHTML = "Test notification"
+  divToaster.prepend(divCreate)
+  setTimeout(() => {
+    divCreate.remove()
+  }, timeout1);
+  console.log("click")
+})

@@ -46,19 +46,33 @@ table {
 /* MY LIBRARY */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 html {
-    --c1:#990d0d;
-    --c2:#9b9595;
+    --bg1:#f0f0f0;
+    --bg2:#fff;
     --c3:#222222;
     --c4:#180c46;
     --c5:#3f3232;
+    --c-p1:#000000;
+    --b1:#fff;
+    --b1-border:#06a4ff;
+    --b1-hover:#06a4ff;
+    --b1-border-hover:#fff;
+    --white: #fff;
+    --black:#000000;
     
 }
 html[data-theme=dark] {
-    --c1:#999999;
-    --c2:#000000;
+    --bg1:#131313;
+    --bg2:#000000;
     --c3:#fb0060;
     --c4:#fff;
-    --c5:#111111;
+    --c5:#373b3d;
+    --c-p1:#fff;
+    --b1:#fff;
+    --b1-border:#373b3d;
+    --b1-hover:#373b3d;
+    --b1-border-hover:#fff;
+    --white: #fff;
+    --black:#000000;
 }
 html.transition,
 html.transition *,
@@ -67,48 +81,6 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
-input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
-}
-
-label {
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 52px;
-	height: 27px;
-	background: grey;
-	float: right;
-	border-radius: 100px;
-	position: relative;
-}
-
-label:after {
-	content: '';
-	position: absolute;
-	top: 3px;
-	left: 3px;
-	width: 20px;
-	height: 20px;
-	background: var(--c5);
-	border-radius: 90px;
-	transition: 0.3s;
-}
-
-input:checked + label {
-	background: var(--c4);
-}
-
-input:checked + label:after {
-	left: calc(100% - 5px);
-	transform: translateX(-100%);
-}
-
-label:active:after {
-	width: 45px;
-}
-
 *{
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -210,6 +182,9 @@ p{
 .col-80{
     width: 80%;
 }
+.col-70{
+    width: 70%;
+}
 .col-60{
     width: 60%;
 }
@@ -228,12 +203,15 @@ p{
 .col-30{
     width: 30%;
 }
+.col-20{
+    width: 20%;
+}
 /* HEADER */
 .bg0{
-    background-color: var(--c1);
+    background-color: var(--bg1);
 }
 .general1{
-    color: var(--c4);
+    color: var(--c-p1);
     align-items: center;
     height: 10vh;
 }
@@ -246,11 +224,11 @@ ul{
     justify-content: space-between;
 }
 .bg1{
-    background-color: var(--c2);
+    background-color: var(--bg2);
 }
 .general2{
     height: 90vh;
-    color: var(--c4);
+    color: var(--c-p1);
     flex-flow: column;
     text-align: center;
     align-items: center;
@@ -264,14 +242,85 @@ ul{
 }
 .cursor {
     display: inline-block;
-    background-color: var(--c4);
+    background-color: var(--c-p1);
     width: 0.1rem;
     animation: blink 1s infinite;
-  }
-  @keyframes blink {
-    0%  { background-color: var(--c4); }
-    49% { background-color: var(--c4); }
+}
+@keyframes blink {
+    0%  { background-color: var(--c-p1); }
+    49% { background-color: var(--c-p1); }
     50% { background-color: transparent; }
     99% { background-color: transparent; }
-    100%  { background-color: var(--c4); }
-  }
+    100%  { background-color: var(--c-p1); }
+}
+.btn {
+    background-color: var(--b1);
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    border: 0.1rem solid var(--b1-border);
+}
+.btn:hover {
+    background-color: var(--b1-hover);
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    border: 0.1rem solid var(--b1-border-hover);
+}
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 52px;
+	height: 27px;
+	background: var(--b1-border);
+	float: right;
+	border-radius: 100px;
+	position: relative;
+    margin-right: 3rem;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 20px;
+	height: 20px;
+	background: var(--b1);
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: var(--b1-border);
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+.toaster {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.test {
+    position: relative;
+    background-color: var(--bg1);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--c-p1);
+}
