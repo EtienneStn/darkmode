@@ -18,10 +18,46 @@ let trans = () => {
     }, 200)
 }
 ///////////////////////////////////////////////////////////////////
+// TOAST NOTIF
+const toastButton = document.querySelector('.toast-notif-btn')
+
+console.log(toastButton)
+toastButton.addEventListener('click', () => {
+  const divToaster = document.querySelector(".toaster")
+  const divCreate = document.createElement('div')
+  const timeout1 = 1000
+  divCreate.classList.add("test")
+  divCreate.innerHTML = "Test notification"
+  divToaster.prepend(divCreate)
+  setTimeout(() => {
+    divCreate.remove()
+  }, timeout1);
+  console.log("click")
+})
+////////////////////////////////////////////////////////////////////
+// SIDEBAR
+const sidebarClose = document.querySelector('.sidebar-close')
+sidebarClose.addEventListener('click', () => {
+  console.log("click", sidebarClose)
+  const divSidebar = document.querySelector(".general-sidebar")
+  const divPage = document.querySelector('.general-page')
+  divSidebar.classList.toggle("sidebar-action")
+  divPage.classList.toggle("general-page-action")
+})
+///////////////////////////////////////////////////////////////////
+//ACCORDION 1
+const accordionMain = document.querySelectorAll('.main-li')
+const ulAccordion = document.querySelectorAll(".accordion1")
+console.log(accordionMain)
+accordionMain[0].querySelector('.accordion1').classList.remove('accordion1-hidden');
+/* accordionOpen.addEventListener('click', () => {
+  console.log("click", accordionOpen)
+  liAccordion.classList.toggle("accordion1-action")
+}) */
+///////////////////////////////////////////////////////////////////
 // Autowriter :
 const typedTextSpan = document.querySelector("#auto-writer");
 const cursorSpan = document.querySelector(".cursor");
-
 const txt = ['Lorem ipsum dolor sit amet consectetur.', 'Test', 'Test2'];
 const typingDelay = 100;
 const erasingDelay = 100;
@@ -61,19 +97,5 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
   if(txt.length) setTimeout(type, newTextDelay + 250);
 });
 //////////////////////////////////////////////////////////////////////////////////
-// TOAST NOTIF
-const toastButton = document.querySelector('.toast-notif-btn')
 
-console.log(toastButton)
-toastButton.addEventListener('click', () => {
-  const divToaster = document.querySelector(".toaster")
-  const divCreate = document.createElement('div')
-  const timeout1 = 1000
-  divCreate.classList.add("test")
-  divCreate.innerHTML = "Test notification"
-  divToaster.prepend(divCreate)
-  setTimeout(() => {
-    divCreate.remove()
-  }, timeout1);
-  console.log("click")
-})
+
