@@ -223,10 +223,13 @@ p{
 .title1{
     margin-left: 3rem;
 }
-ul{
+nav ul{
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+}
+nav ul li{
+    padding-right: 2rem;
 }
 .bg1{
     background-color: var(--bg2);
@@ -331,7 +334,6 @@ label:active:after {
     border-radius: 0.5rem;
     color: var(--c-p1);
 }
-/* Sidebar */
 .general-page{
     width: 85%;
     margin-left: 15%;
@@ -340,6 +342,7 @@ label:active:after {
     width: 100%;
     margin-left: 0%;
 }
+/* Sidebar */
 .sidebar {
     position: fixed;
     width: 15%;
@@ -372,24 +375,41 @@ label:active:after {
     border: var(--b1-border) solid 0.1rem;
     background-color: var(--bg2);
 }
+/* Items SIDEBAR */
 .items-sidebar{
     flex-direction: column;
     height: 80%;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
-.items-sidebar .main-li{
-    padding: 0rem 0rem 1rem 1rem;
+.items-sidebar .dropdown{
+    padding: 0rem 0rem 0rem 1rem;
 }
-.accordion1 {
+.dropdown a{
+    width: 100%;
+    color: var(--c-p1);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+.dropdown-menu {
     display: block;
-    padding: 0rem 0rem 1rem 2rem;
+    padding: 0rem 0rem 0rem 1rem;
 }
-.accordion1-hidden {
+.dropdown-menu-hidden {
     display: none;
 }
-.accordion1 li {
+.dropdown-menu li {
     padding-bottom: 1rem;
 }
+.dropdown-menu li:first-child {
+    padding-top: 1rem;
+}
+.arrow-open {
+    transform: rotate(-180deg);
+    transition: 0.4s;
+}
+/* Bottom SIDEBAR */
 .sidebar-bottom {
     height: 16%;
     flex-direction: column;

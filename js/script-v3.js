@@ -45,15 +45,21 @@ sidebarClose.addEventListener('click', () => {
   divPage.classList.toggle("general-page-action")
 })
 ///////////////////////////////////////////////////////////////////
-//ACCORDION 1
-const accordionMain = document.querySelectorAll('.main-li')
-const ulAccordion = document.querySelectorAll(".accordion1")
-console.log(accordionMain)
-accordionMain[0].querySelector('.accordion1').classList.remove('accordion1-hidden');
-/* accordionOpen.addEventListener('click', () => {
-  console.log("click", accordionOpen)
-  liAccordion.classList.toggle("accordion1-action")
-}) */
+// Dropdown Menu
+let dropdown = document.querySelectorAll('.dropdown');
+let dropdownArray = Array.prototype.slice.call(dropdown,0);
+dropdownArray.forEach(function(el){
+	let button = el.querySelector('[data-toggle="dropdown"]'),
+			menu = el.querySelector('.dropdown-menu'),
+			arrow = button.querySelector('i.fas');
+
+	button.onclick = function(event) {
+		event.preventDefault();
+		menu.classList.toggle('dropdown-menu-hidden');
+		arrow.classList.toggle('arrow-open');
+	};
+})
+
 ///////////////////////////////////////////////////////////////////
 // Autowriter :
 const typedTextSpan = document.querySelector("#auto-writer");
