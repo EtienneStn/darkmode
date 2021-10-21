@@ -50,15 +50,14 @@ let dropdown = document.querySelectorAll('.dropdown');
 let dropdownArray = Array.prototype.slice.call(dropdown,0);
 dropdownArray.forEach(function(el){
 	let button = el.querySelector('[data-toggle="dropdown"]'),
-			menu = el.querySelector('.dropdown-menu'),
-			arrow = button.querySelector('i.fas');
-
-	button.onclick = function(event) {
-		event.preventDefault();
-		menu.classList.toggle('dropdown-menu-hidden');
-		arrow.classList.toggle('arrow-open');
-	};
-})
+    menu = el.querySelector('.dropdown-menu'),
+    arrow = button.querySelector('i.fas');
+    button.onclick = function(event) {
+      event.preventDefault();
+      menu.classList.toggle('dropdown-menu-hidden');
+      arrow.classList.toggle('arrow-open');
+    };
+});
 
 ///////////////////////////////////////////////////////////////////
 // Autowriter :
